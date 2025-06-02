@@ -4,7 +4,8 @@ A React application to search and view movie details.
 Using localStorage to save movies locally.
 
 ## Features
-
+- Using free api from TMDB API from `https://www.themoviedb.org/`
+- Need a token, api_key and this link `https://api.themoviedb.org/3/` to make it work.
 - Search for movies
 - View movie details and posters
 - Mark favorites with a heart button
