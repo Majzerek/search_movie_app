@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { useSearchMoviesQuery } from "../../store/api/movieApiSlice.ts";
 import type { RootState } from "../../store/store.ts";
-import type { MovieType } from "../../types";
+import type { MovieType } from "../../types/index.ts";
 import { BestMovies, Card, ChangePage, Loader } from "../index.ts";
 import { useState } from "react";
+
 
 export const MovieList = () => {
 
@@ -15,9 +16,9 @@ export const MovieList = () => {
   // Fetching movies based on the search term and page number
   // The useSearchMoviesQuery hook is used to fetch movies from the API
   const { data, error, isFetching, isLoading } = useSearchMoviesQuery({ searchTerm: inpValue, page: page });
+  const loading = isFetching || isLoading;
 
-  if (isFetching) return <Loader />;
-  if (isLoading) return <Loader />;
+  if (loading) return <Loader />;
   if (error) return <section className="center">{error ? "Something went wrong!" : ''}</section>;
   if (!data.length && inpValue === '') return <section className="center">Start serching!</section>;
   if (data.results.length === 0) return <section className="center">No results found for "{inpValue}"</section>;
@@ -49,7 +50,7 @@ export const MovieList = () => {
             id={movie.id} titleHeader={movie.title}
             year={movie.release_date.slice(0, 4)}
             popularity={movie.vote_average}
-            isLoading={isLoading || isFetching}
+            isLoad={loading}
           />
         ))}
       </ul>

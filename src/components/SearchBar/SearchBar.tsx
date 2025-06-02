@@ -1,25 +1,22 @@
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../store/store";
 import { useState, type ChangeEvent, type FormEvent, } from "react";
-import { Link } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useSearchMoviesQuery } from "../../store/api/movieApiSlice";
-
-// This component is used to search for movies
 
 export const SearchBar = () => {
 
   const inpValue = useSelector((state: RootState) => state.inputSearch.value);
-  const [searchInput, setSearchInput] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [searchInput, setSearchInput] = useState('');
+  const [error, setError] = useState('');
+  
   const spinnerIcon = <FontAwesomeIcon icon={faSpinner} spin />;
   const dispatch = useDispatch();
   const page = useSelector((state: RootState) => state.inputSearch.page);
 
   const { isFetching } = useSearchMoviesQuery({ searchTerm: inpValue, page: page });
-console.log(isFetching)
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
     setError('');
@@ -63,9 +60,6 @@ console.log(isFetching)
         <input type="text" name="searchInput" id="search_input" value={searchInput} onChange={handleInputChange} />
         {error && <small className="error">{error}</small>}
         <button type="submit" disabled={error !== ''|| isFetching} >{!isFetching ? "Search" : spinnerIcon }</button>
-        <Link to="/favorites" className="favorite_link" title="Go to favorite movies">
-          Go To Favorite <FontAwesomeIcon icon={faThumbsUp} />
-        </Link>
       </form>
     </div>
   )

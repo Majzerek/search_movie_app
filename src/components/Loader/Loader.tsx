@@ -1,7 +1,7 @@
 
 export const Loader = () => {
   return (
-    <div className="center">
+    <div className="load">
       <div className='loader'></div>
     </div>
   )
