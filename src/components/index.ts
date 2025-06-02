@@ -6,5 +6,4 @@ export * from "./Loader/Loader";
 export * from "./Header/Header"
 export * from "./BestMovies/BestMovies";
 export * from "./ChangePage/ChangePage";
-export * from "./HeartBtn/HeartBtn"
 export * from "./ButtonNav"

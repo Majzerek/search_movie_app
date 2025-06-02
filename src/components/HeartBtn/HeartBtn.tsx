@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../store/store";
 import type { HeartComponentProps } from "../../types";
 import { useEffect } from "react";
-import { saveToLocalStorage } from "../../utils";
-
+import { saveToLocalStorage } from "../utils";
 
 export const HeartBtn = ({ id, title, year, element }: HeartComponentProps) => {
 

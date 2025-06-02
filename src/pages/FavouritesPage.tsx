@@ -1,11 +1,11 @@
 import { Link } from "react-router"
+import { removeFromLocalStorage } from "../components/utils/helpers/localStorage"
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/store";
 import { HeartBtn } from "../components/HeartBtn/HeartBtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { ButtonNav } from "../components";
-import { removeFromLocalStorage } from "../utils";
 
 export const FavouritesPage = () => {
 

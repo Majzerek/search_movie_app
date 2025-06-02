@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { decrementPage, incrementPage } from "../../store/inputValue/inputSlice.ts";
 import type { RootState } from "../../store/store.ts";
-import type { ChangePageType } from "../../types";
+import type { ChangePageType } from "../../types/index.ts";
 
 export const ChangePage = ({ total }: ChangePageType) => {
 
