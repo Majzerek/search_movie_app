@@ -47,7 +47,7 @@ export type AppDispatch = typeof store.dispatch;
 ### Installation
 
 ```bash
-git clone https://github.com/Majzerek/freeMovieSearch.git
+git clone https://github.com/Majzerek/search_movie_app.git
 cd freeMovieSearch
 npm install
 ```
