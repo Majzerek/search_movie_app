@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFromLocalStorage } from "../../components/utils";
+import { getFromLocalStorage } from "../../utils";
+
 
 export interface UserFavourite {
   id: string;
